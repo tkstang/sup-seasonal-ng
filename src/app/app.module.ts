@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { SearchFoodsComponent } from './search-foods/search-foods.component';
 import { SearchMonthsComponent } from './search-months/search-months.component';
 import { MonthsResultsComponent } from './months-results/months-results.component';
+import { searchMonthsInjectables } from './search-months/search-months.injectables';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,7 +39,7 @@ import { MonthsResultsComponent } from './months-results/months-results.componen
     SuiModule,
     // RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [searchMonthsInjectables],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
