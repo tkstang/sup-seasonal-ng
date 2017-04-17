@@ -1,0 +1,9 @@
+<br><br><br><p>You can also use the keyboard to navigate.</p>
+<sui-select [(ngModel)]="selectedOption" [options]="options" labelField="name" [isSearchable]="true" #searchSelect>
+    <!-- <sui-select-option *ngFor="let option of searchSelect.availableOptions" [value]="jan"></sui-select-option> -->
+    <!-- <sui-select-option *ngFor="let option of searchSelect.availableOptions" [value]="jan">Ja</sui-select-option> -->
+    <sui-select-option [value]="jan">Ja</sui-select-option>
+</sui-select>
+<div class="ui segment">
+    <p>Currently selected: {{ selectedOption | json }}</p>
+</div>
