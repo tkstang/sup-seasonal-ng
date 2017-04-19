@@ -1,0 +1,15 @@
+<div class="ui center aligned grid container">
+	<div class="column centered">
+		<div class="centered">
+			<h1>Recipes by Month</h1>
+			<div>
+			<recipe-months
+				(loading)="loading = $event" (results)="updateResults($event)"></recipe-months>
+			<!-- <recipes-results-list></recipes-results-list> -->
+			</div>
+			<div class="results-box">
+				<recipes-result *ngFor="let result of results" [result]="result">
+				</recipes-result>
+			</div>
+	</div>
+</div>

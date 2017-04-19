@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="image">
+     <img src={{result.image}}>
+  </div>
+  <div class="content">
+    <div class="header">{{result.title}}</div>
+    <div class="meta">Total Time: {{result.readyInMinutes}}</div>
+    <div class="description">
+      <div *ngFor="let ingredient of result.extendedIngredients">
+        {{ingredient.originalString}}
+      </div>
+      <div>{{result.instructions}}</div>
+    </div>
+    <div class="extra content">
+      {{result.servings}}
+      <span class="right floated">{{result.servings}}</span>
+    </div>
+</div>

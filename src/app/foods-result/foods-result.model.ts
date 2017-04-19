@@ -1,4 +1,4 @@
-export class MonthsResults {
+export class FoodsResult {
   foodName: string;
   jan: boolean;
   feb: boolean;

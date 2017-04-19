@@ -5,9 +5,9 @@ import {
   EventEmitter,
   ElementRef
 } from '@angular/core';
-import { Month } from './month';
+import { Month } from '../search-months/month';
 import { NgModule } from '@angular/core';
-import { MonthsResults } from '../months-results/months-results.model';
+import { RecipesResult } from '../recipes-result/recipes-result.model';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
@@ -16,16 +16,16 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/switch';
-import { SearchMonthsService } from './search-months.service';
+import { SearchRecipesService } from './search-recipes.service';
 
 @Component({
-  selector: 'search-months',
-  templateUrl: './search-months.component.html',
-  styleUrls: ['./search-months.component.css']
+  selector: 'recipe-months',
+  templateUrl: './recipe-months.component.html',
+  styleUrls: ['./recipe-months.component.css']
 })
-export class SearchMonthsComponent implements OnInit {
+export class RecipeMonthsComponent implements OnInit {
   @Output() loading: EventEmitter<boolean> = new EventEmitter<boolean>();
-  @Output() results: EventEmitter<MonthsResults[]> = new EventEmitter<MonthsResults[]>();
+  @Output() results: EventEmitter<RecipesResult[]> = new EventEmitter<RecipesResult[]>();
 
   months = [
     new Month('jan', 'January'),
@@ -47,14 +47,14 @@ export class SearchMonthsComponent implements OnInit {
     console.log(this.selectedMonth);
   }
 
-  searchMonth(query) {
+  searchRecipes(query) {
     console.log(query)
     console.log('hello')
     Observable.fromEvent(this.el.nativeElement, 'click')
-      .map((query: string) => this.monthSearch.search(this.selectedMonth))
+      .map((query: string) => this.recipesSearch.search(this.selectedMonth))
       .switch()
       .subscribe(
-      (results: MonthsResults[]) => { // on sucesss
+      (results: RecipesResult[]) => { // on sucesss
         console.log('hi')
         this.loading.emit(false);
         this.results.emit(results);
@@ -69,7 +69,8 @@ export class SearchMonthsComponent implements OnInit {
   }
 
   constructor(
-    private monthSearch: SearchMonthsService,
+    private http: Http,
+    private recipesSearch: SearchRecipesService,
     private el: ElementRef
   ) { }
 

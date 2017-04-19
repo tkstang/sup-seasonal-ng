@@ -5,5 +5,5 @@ import {
 
 export const searchMonthsInjectables: Array<any> = [
   {provide: SearchMonthsService, useClass: SearchMonthsService},
-  {provide: API_URL, useValue: SearchMonthsService}
+  {provide: API_URL, useValue: API_URL}
 ];
