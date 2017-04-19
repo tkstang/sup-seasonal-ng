@@ -1,0 +1,15 @@
+<div class="ui card recipeCard">
+  <div class="image">
+    <img src={{result.image}}>
+  </div>
+  <div class="content">
+    <div class="header">{{result.title}}</div>
+    <div class="meta">Total Time: {{result.readyInMinutes}} minutes</div>
+    <div class="description">
+      <div *ngFor="let ingredient of result.extendedIngredients">
+        {{ingredient.originalString}}
+      </div>
+      <div>{{result.instructions}}</div>
+    </div>
+  </div>
+</div>

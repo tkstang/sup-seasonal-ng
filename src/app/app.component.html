@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<div class="ui menu nav">
+  <a class="item" [routerLink]="['/home']">Home</a>
+  <a class="item" [routerLink]="['/month']">Search by Month</a>
+  <a class="item" [routerLink]="['/food']">Search by Food</a>
+  <a class="item" [routerLink]="['/recipes']">Recipes</a>
+  <div class="right menu">
+    <a class="item">Sign Up</a>
+    <a class="item" [routerLink]="['/login']">Log In</a>
+  </div>
+</div>
+
+<div id="content">
+  <router-outlet></router-outlet>
+</div>

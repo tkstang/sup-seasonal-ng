@@ -1,0 +1,9 @@
+<select class="ui selection dropdown" id="month-select" [(ngModel)]="selected" (change)="dropdownSelect(selected)">
+  <option *ngFor="let month of months" [value]="month.value">
+    {{month.name}}
+  </option>
+</select>
+<br>
+<button class="ui primary button" id="food-submit" (click)="searchRecipes(selected)">
+  Submit
+</button>

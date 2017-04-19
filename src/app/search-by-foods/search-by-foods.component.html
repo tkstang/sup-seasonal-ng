@@ -1,0 +1,12 @@
+<div class="ui center aligned grid container">
+	<div class="column centered">
+		<div class="centered">
+			<div class="spacing">
+				<search-foods (loading)="loading = $event" (results)="updateResults($event)"></search-foods>
+			</div>
+			<div>
+				<foods-result *ngFor="let result of results" [result]="result">
+				</foods-result>
+			</div>
+		</div>
+	</div>

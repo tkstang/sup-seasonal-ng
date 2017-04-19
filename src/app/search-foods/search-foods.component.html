@@ -1,0 +1,11 @@
+<div>
+  <h1> Search Seasonality by Food</h1>
+  <select class="ui selection dropdown" id="food-select" [(ngModel)]="selected" (change)="dropdownSelect(selected)">
+    <option *ngFor="let food of foodArr" [value]= "food.value">
+      {{food.name}}
+    </option>
+  </select>
+</div>
+<button class="ui primary button" (click)="searchFood(selected)">
+  Submit
+</button>

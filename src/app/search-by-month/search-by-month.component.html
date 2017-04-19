@@ -1,0 +1,14 @@
+<div class="ui center aligned grid container">
+	<div class="column centered">
+		<div class="centered">
+			<h1>Search Seasonality by Month</h1>
+			<div class="month-dropdown spacing">
+				<search-months class="month-dropdown" (loading)="loading = $event" (results)="updateResults($event)"></search-months>
+			</div>
+			<div class="results-box">
+				<months-results *ngFor="let result of results" [result]="result">
+				</months-results>
+			</div>
+		</div>
+	</div>
+</div>
