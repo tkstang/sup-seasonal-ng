@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesResult } from '../recipes-result/recipes-result.model';
-import { RecipesResultsListComponent } from '../recipes-results-list/recipes-results-list.component';
 
 @Component({
   selector: 'recipes-by-month',
@@ -18,7 +17,6 @@ export class RecipesByMonthComponent implements OnInit {
 
   updateResults(results: RecipesResult[]): void {
     this.results = results;
-    console.log("results:", this.results); // uncomment to take a look
   }
 
 }

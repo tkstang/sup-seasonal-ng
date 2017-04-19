@@ -4,6 +4,6 @@ import {
 } from './search-months.service';
 
 export const searchMonthsInjectables: Array<any> = [
-  {provide: SearchMonthsService, useClass: SearchMonthsService},
-  {provide: API_URL, useValue: API_URL}
+  { provide: SearchMonthsService, useClass: SearchMonthsService },
+  { provide: API_URL, useValue: API_URL }
 ];

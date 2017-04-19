@@ -42,25 +42,21 @@ export class RecipeMonthsComponent implements OnInit {
     new Month('dec', 'December'),
   ];
   selectedMonth: string = null;
-  private dropdownSelect(value: string): void {
+  dropdownSelect(value: string): void {
     this.selectedMonth = value;
     console.log(this.selectedMonth);
   }
 
   searchRecipes(query) {
-    console.log(query)
-    console.log('hello')
     Observable.fromEvent(this.el.nativeElement, 'click')
       .map((query: string) => this.recipesSearch.search(this.selectedMonth))
       .switch()
       .subscribe(
       (results: RecipesResult[]) => { // on sucesss
-        console.log('hi')
         this.loading.emit(false);
         this.results.emit(results);
       },
       (err: any) => { // on error
-        console.log(err);
         this.loading.emit(false);
       },
       () => { // on completion

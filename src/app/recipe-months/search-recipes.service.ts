@@ -13,24 +13,23 @@ export class SearchRecipesService {
   constructor(private http: Http,
     @Inject(API_URL) private apiUrl: string) {
 
-    }
+  }
 
-    search(month: string): Observable<RecipesResult[]> {
-      let queryUrl = `${this.apiUrl}months/${month}/recipes`;
-      return this.http.get(queryUrl)
-        .map((response: Response) => {
-          return (<any>response.json()).map(item => {
-            console.log("raw item", item);
-            return new RecipesResult({
-              id: item.id,
-              servings: item.servingsa,
-              title: item.title,
-              readyInMinutes: item.readyInMinutes,
-              image: item.image,
-              extendedIngredients: item.extendedIngredients,
-              instructions: item.instructions,
-            })
-          })
-        })
-    }
+  search(month: string): Observable<RecipesResult[]> {
+    const queryUrl = `${this.apiUrl}months/${month}/recipes`;
+    return this.http.get(queryUrl)
+      .map((response: Response) => {
+        return (<any>response.json()).map(item => {
+          return new RecipesResult({
+            id: item.id,
+            servings: item.servingsa,
+            title: item.title,
+            readyInMinutes: item.readyInMinutes,
+            image: item.image,
+            extendedIngredients: item.extendedIngredients,
+            instructions: item.instructions,
+          });
+        });
+      });
+  }
 }

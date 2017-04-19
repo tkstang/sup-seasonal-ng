@@ -4,6 +4,6 @@ import {
 } from './search-foods.service';
 
 export const searchFoodsInjectables: Array<any> = [
-  {provide: SearchFoodsService, useClass: SearchFoodsService},
-  {provide: API_URL, useValue: API_URL}
+  { provide: SearchFoodsService, useClass: SearchFoodsService },
+  { provide: API_URL, useValue: API_URL }
 ];

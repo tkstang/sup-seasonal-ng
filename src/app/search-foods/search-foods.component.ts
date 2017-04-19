@@ -30,25 +30,21 @@ export class SearchFoodsComponent implements OnInit {
   foodArr = [];
 
   selectedFood: number = null;
-  private dropdownSelect(value: number): void {
+  dropdownSelect(value: number): void {
     this.selectedFood = value;
     console.log(this.selectedFood);
   }
 
   searchFood(query) {
-    console.log(query)
-    console.log('hello')
     Observable.fromEvent(this.el.nativeElement, 'click')
       .map((query: number) => this.foodSearch.search(this.selectedFood))
       .switch()
       .subscribe(
       (results: FoodsResult[]) => { // on sucesss
-        console.log('hi')
         this.loading.emit(false);
         this.results.emit(results);
       },
       (err: any) => { // on error
-        console.log(err);
         this.loading.emit(false);
       },
       () => { // on completion
@@ -66,11 +62,10 @@ export class SearchFoodsComponent implements OnInit {
     this.http.request('http://supseasonal.herokuapp.com/api/foods')
       .subscribe((res: Response) => {
         return (<any>res.json().map((item) => {
-          return this.foodArr.push(new Food(item.id, item.food_name))
+          return this.foodArr.push(new Food(item.id, item.food_name));
         })
-        )
-      }
-      )
+        );
+      });
   }
 
 }
