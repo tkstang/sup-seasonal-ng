@@ -3,13 +3,20 @@
 		<div class="centered">
 			<h1>Recipes by Month</h1>
 			<div>
-			<recipe-months
+			<recipe-months class="month-search"
 				(loading)="loading = $event" (results)="updateResults($event)"></recipe-months>
 			<!-- <recipes-results-list></recipes-results-list> -->
 			</div>
-			<div class="results-box">
-				<recipes-result *ngFor="let result of results" [result]="result">
-				</recipes-result>
+	</div>
+	<br>
+	<div class="recipeCards">
+		<div class="ui grid">
+			<div class="row">
+				<div class="column">
+					<recipes-result *ngFor="let result of results" [result]="result">
+					</recipes-result>
+				</div>
 			</div>
+		</div>
 	</div>
 </div>

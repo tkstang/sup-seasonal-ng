@@ -1,4 +1,10 @@
-<div class="ui cards">
-  <recipes-result *ngFor="let result of results" [result]="result">
-  </recipes-result>
+<div class="recipeCards">
+  <div class="ui grid">
+    <div class="row">
+      <div class="column">
+        <recipes-result *ngFor="let result of results" [result]="result">
+        </recipes-result>
+      </div>
+    </div>
+  </div>
 </div>
