@@ -4,7 +4,9 @@ import {
 } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { RecipesResult } from '../recipes-result/recipes-result.model';
+
+// space between your imports and 3rd party imports.
+import { RecipesResult } from '../models/recipes-result.model';
 
 export const API_URL = 'http://supseasonal.herokuapp.com/api/';
 

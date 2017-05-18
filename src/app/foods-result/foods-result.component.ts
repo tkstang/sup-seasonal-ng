@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FoodsResult } from './foods-result.model';
+
+import { FoodsResult } from '../models/foods-result.model';
 
 @Component({
   selector: 'foods-result',

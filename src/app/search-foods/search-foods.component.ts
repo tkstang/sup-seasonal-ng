@@ -5,9 +5,7 @@ import {
   EventEmitter,
   ElementRef
 } from '@angular/core';
-import { Food } from './food';
 import { NgModule } from '@angular/core';
-import { FoodsResult } from '../foods-result/foods-result.model';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
@@ -16,7 +14,10 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/switch';
-import { SearchFoodsService } from './search-foods.service';
+
+import { SearchFoodsService } from '../services/search-foods.service';
+import { FoodsResult } from '../models/foods-result.model';
+import { Food } from '../models/food.model';
 
 @Component({
   selector: 'search-foods',

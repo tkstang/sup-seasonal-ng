@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesResult } from '../recipes-result/recipes-result.model';
+
+import { RecipesResult } from '../models/recipes-result.model';
 
 @Component({
   selector: 'recipes-by-month',
