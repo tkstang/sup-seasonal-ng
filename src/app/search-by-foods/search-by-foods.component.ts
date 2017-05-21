@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodsResult } from '../foods-result/foods-result.model';
+
+import { FoodsResult } from '../models/foods-result.model';
 
 @Component({
   selector: 'app-search-by-foods',

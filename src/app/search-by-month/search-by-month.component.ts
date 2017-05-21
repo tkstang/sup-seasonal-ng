@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MonthsResults } from '../months-results/months-results.model';
+
+import { MonthsResults } from '../models/months-results.model';
 
 @Component({
   selector: 'search-by-month',

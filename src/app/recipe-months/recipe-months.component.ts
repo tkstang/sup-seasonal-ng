@@ -5,9 +5,7 @@ import {
   EventEmitter,
   ElementRef
 } from '@angular/core';
-import { Month } from '../search-months/month';
 import { NgModule } from '@angular/core';
-import { RecipesResult } from '../recipes-result/recipes-result.model';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
@@ -16,7 +14,13 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/switch';
-import { SearchRecipesService } from './search-recipes.service';
+
+// your imports should go after imports from 3rd party libraries.
+import { SearchRecipesService } from '../services/search-recipes.service';
+import { RecipesResult } from '../models/recipes-result.model';
+import { Month } from '../models/month.model';
+
+
 
 @Component({
   selector: 'recipe-months',

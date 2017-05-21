@@ -1,3 +1,4 @@
+// this looks exactly like the foods-result.model. I would use that or extend it.
 export class MonthsResults {
   foodName: string;
   jan: boolean;

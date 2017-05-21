@@ -5,9 +5,7 @@ import {
   EventEmitter,
   ElementRef
 } from '@angular/core';
-import { Month } from './month';
 import { NgModule } from '@angular/core';
-import { MonthsResults } from '../months-results/months-results.model';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromEvent';
@@ -16,7 +14,12 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/switch';
-import { SearchMonthsService } from './search-months.service';
+
+// moved your imports below 3rd party imports.
+import { SearchMonthsService } from '../services/search-months.service';
+import { MonthsResults } from '../models/months-results.model';
+import { Month } from '../models/month.model';
+
 
 @Component({
   selector: 'search-months',

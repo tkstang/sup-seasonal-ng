@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MonthsResults } from './months-results.model';
+
+import { MonthsResults } from '../models/months-results.model';
 
 @Component({
   selector: 'months-results',
